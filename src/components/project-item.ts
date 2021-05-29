@@ -1,7 +1,7 @@
-import Component from './base-component.js';
-import AutoBind from '../decorators/AutoBind.js';
-import { Draggable } from '../models/drag-and-drop.js';
-import Project from '../models/project.js';
+import Component from './base-component';
+import AutoBind from '../decorators/AutoBind';
+import { Draggable } from '../models/drag-and-drop';
+import Project from '../models/project';
 
 export default class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable {
     constructor(hostId: string, private project: Project) {
@@ -13,6 +13,7 @@ export default class ProjectItem extends Component<HTMLUListElement, HTMLLIEleme
     configure() {
       this.element.draggable = true;
       this.element.style.backgroundColor = "white";
+      this.element.style.cursor = "move"
       this.element.addEventListener("dragstart", this.dragStartHandler);
     }
     

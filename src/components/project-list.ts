@@ -1,9 +1,9 @@
-import Component from "./base-component.js";
-import ProjectItem from "./project-item.js";
-import AutoBind from "../decorators/AutoBind.js";
-import { DragTarget } from "../models/drag-and-drop.js";
-import { store } from "../storage/store.js";
-import Project, { PROJECT_TYPE } from "../models/project.js";
+import Component from "./base-component";
+import ProjectItem from "./project-item";
+import AutoBind from "../decorators/AutoBind";
+import { DragTarget } from "../models/drag-and-drop";
+import { store } from "../storage/store";
+import Project, { PROJECT_TYPE } from "../models/project";
 
 export default class ProjectList extends Component<HTMLDivElement, HTMLElement> implements DragTarget{
     assignedProjects: Project[] = [];
@@ -51,6 +51,8 @@ export default class ProjectList extends Component<HTMLDivElement, HTMLElement> 
   
     @AutoBind
     dropHandler(event: DragEvent) {
+      const listEl = this.element.querySelector('ul')!;
+      listEl.classList.remove("droppable");
       store.setProjectStatus(event.dataTransfer!.getData("text/plain"), this.type);
     }
     

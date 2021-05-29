@@ -1,8 +1,8 @@
-import AutoBind from "../decorators/AutoBind.js";
-import Project, { PROJECT_TYPE, ValidateAble } from "../models/project.js";
-import { store } from "../storage/store.js";
-import { validateProject } from "../utils/validation.js";
-import Component from "./base-component.js";
+import AutoBind from "../decorators/AutoBind";
+import Project, { PROJECT_TYPE, ValidateAble } from "../models/project";
+import { store } from "../storage/store";
+import { validateProject } from "../utils/validation";
+import Component from "./base-component";
 
 export default class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
     inputElement: {

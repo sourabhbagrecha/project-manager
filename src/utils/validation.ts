@@ -1,4 +1,4 @@
-import { ValidateAble } from "../models/project.js";
+import { ValidateAble } from "../models/project";
 
 export function validateProject(validateAbleInput: ValidateAble): boolean {
     let isValid = true;

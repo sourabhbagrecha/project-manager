@@ -1,4 +1,4 @@
-import Listener from "./listener.js";
+import Listener from "./listener";
 
 export class CStorage<T> {
     protected listeners: Listener<T>[] = [];

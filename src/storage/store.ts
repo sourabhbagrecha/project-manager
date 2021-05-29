@@ -1,5 +1,5 @@
-import Project, { PROJECT_TYPE } from "../models/project.js";
-import { CStorage } from "../models/storage.js";
+import Project, { PROJECT_TYPE } from "../models/project";
+import { CStorage } from "../models/storage";
 
 export class ProjectStorage extends CStorage<Project> {
     private projects: Project[];
